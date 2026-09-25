@@ -120,9 +120,9 @@ flowchart LR
     D --> F[Cliente visualiza estado<br/>en Mis Pedidos]
     E --> F
 ### 👤 Autor
-Santiago Comes 
-GitHub [GitHub](https://github.com/Scomes02])
-LinkedIn [Linkedin](www.linkedin.com/in/santiago-comes)
+**Santiago Comes** 
+- 💻 GitHub: [Scomes02](https://github.com/Scomes02)
+- 💼 LinkedIn: [Santiago Comes](https://www.linkedin.com/in/santiago-comes)
 
 📄 Licencia
 Proyecto desarrollado con fines educativos y de portafolio para el aprendizaje práctico de arquitectura de videojuegos en Unity y programación en C#.
