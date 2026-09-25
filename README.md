@@ -75,13 +75,48 @@ Space-Invaders-2/
 ├── ProjectSettings/            # Configuración de físicas 2D, inputs, tags y capas
 └── README.md                   # Documentación del proyecto
 ```
+🚀 Instalación y puesta en marcha
+Requisitos previos
+Unity Hub instalado
 
-### ▶️ Cómo ejecutar el proyecto
-1. Clonar el repositorio
-2. Abrir el proyecto desde **Unity Hub**
-3. Seleccionar la versión de Unity correspondiente
-4. Ejecutar el juego desde el editor (`Play`) o generar una build
+Unity Editor (versión compatible con el proyecto, recomendada rama LTS)
+
+Visual Studio o VS Code con soporte para C# y extensión de Unity (opcional, para editar scripts)
+
+Pasos
+Bash
+# 1. Clonar el repositorio en tu máquina local
+git clone [https://github.com/Scomes02/Space-Invaders-2.git](https://github.com/Scomes02/Space-Invaders-2.git)
+cd Space-Invaders-2
+Para abrir y ejecutar el proyecto en tu entorno:
+
+Abrí Unity Hub y hacé clic en el botón Add -> Add project from disk.
+
+Seleccioná la carpeta raíz Space-Invaders-2 recién clonada.
+
+Unity Hub detectará automáticamente la versión del motor requerida; abrilo haciendo clic sobre el nombre del proyecto.
+
+Dentro del Unity Editor, dirigite a la carpeta Assets/Scenes/ y abrí la escena principal del juego.
+
+Presioná el botón Play (▶) en la barra superior del editor para probar el juego en tiempo real, o dirigite a File > Build Settings para compilar un ejecutable independiente (.exe).
+
+🧩 Flujo del sistema
+Fragmento de código
+flowchart LR
+    A[Inicio de partida<br/>Carga de escena y oleada] --> B[Jugador mueve nave<br/>y dispara misiles]
+    B --> C{¿Colisión<br/>detectada?}
+    C -->|Misil impacta enemigo| D[Destruye enemigo<br/>y suma progreso]
+    C -->|Ataque impacta jugador| E[Resta vida<br/>al jugador]
+    D --> F{¿Quedan enemigos<br/>o vidas?}
+    E --> F
+    F -->|Enemigos activos y Vidas > 0| B
+    F -->|Vidas = 0| G[Game Over]
+    F -->|Oleada despejada| H[Victoria / Siguiente oleada]
 
 ### 👤 Autor
-Santiago Comes  
-GitHub: [Scomes02](https://github.com/Scomes02)
+Santiago Comes 
+GitHub [GitHub](https://github.com/Scomes02])
+LinkedIn [Linkedin](www.linkedin.com/in/santiago-comes)
+
+📄 Licencia
+Proyecto desarrollado con fines educativos y de portafolio para el aprendizaje práctico de arquitectura de videojuegos en Unity y programación en C#.
