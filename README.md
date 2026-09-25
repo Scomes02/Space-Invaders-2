@@ -75,7 +75,7 @@ Space-Invaders-2/
 ├── ProjectSettings/            # Configuración de físicas 2D, inputs, tags y capas
 └── README.md                   # Documentación del proyecto
 ```
-🚀 Instalación y puesta en marcha
+## 🚀 Instalación y puesta en marcha
 Requisitos previos
 Entorno de servidor local (XAMPP, WAMP, Laragon o MAMP)
 
@@ -87,7 +87,7 @@ Gestor de base de datos (phpMyAdmin o DBeaver)
 
 Pasos
 Bash
-# 1. Clonar el repositorio dentro de la carpeta pública de tu servidor (ej. htdocs en XAMPP)
+## 1. Clonar el repositorio dentro de la carpeta pública de tu servidor (ej. htdocs en XAMPP)
 cd C:/xampp/htdocs
 git clone [https://github.com/Scomes02/Gestor-Stock.git](https://github.com/Scomes02/Gestor-Stock.git)
 cd Gestor-Stock
