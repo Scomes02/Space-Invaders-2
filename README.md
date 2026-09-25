@@ -101,7 +101,7 @@ Dentro del Unity Editor, dirigite a la carpeta Assets/Scenes/ y abrí la escena 
 Presioná el botón Play (▶) en la barra superior del editor para probar el juego en tiempo real, o dirigite a File > Build Settings para compilar un ejecutable independiente (.exe).
 
 🧩 Flujo del sistema
-Fragmento de código
+```mermaid
 flowchart LR
     A[Inicio de partida<br/>Carga de escena y oleada] --> B[Jugador mueve nave<br/>y dispara misiles]
     B --> C{¿Colisión<br/>detectada?}
@@ -112,6 +112,7 @@ flowchart LR
     F -->|Enemigos activos y Vidas > 0| B
     F -->|Vidas = 0| G[Game Over]
     F -->|Oleada despejada| H[Victoria / Siguiente oleada]
+```
 
 ### 👤 Autor
 **Santiago Comes** 
