@@ -77,48 +77,42 @@ Space-Invaders-2/
 ```
 ## 🚀 Instalación y puesta en marcha
 Requisitos previos
-Entorno de servidor local (XAMPP, WAMP, Laragon o MAMP)
+Unity Hub instalado
 
-PHP 7.4 / 8.x
+Unity Editor (versión compatible con el proyecto, recomendada rama LTS)
 
-MySQL / MariaDB
-
-Gestor de base de datos (phpMyAdmin o DBeaver)
+Visual Studio o VS Code con soporte para C# y extensión de Unity (opcional, para editar scripts)
 
 Pasos
 Bash
-## 1. Clonar el repositorio dentro de la carpeta pública de tu servidor (ej. htdocs en XAMPP)
-cd C:/xampp/htdocs
-git clone [https://github.com/Scomes02/Gestor-Stock.git](https://github.com/Scomes02/Gestor-Stock.git)
-cd Gestor-Stock
-Configurá la base de datos local siguiendo estos pasos:
+### 1. Clonar el repositorio en tu máquina local
+git clone [https://github.com/Scomes02/Space-Invaders-2.git](https://github.com/Scomes02/Space-Invaders-2.git)
+cd Space-Invaders-2
+Para abrir y ejecutar el proyecto en tu entorno:
 
-Iniciá los servicios de Apache y MySQL desde el panel de control de XAMPP.
+Abrí Unity Hub y hacé clic en el botón Add -> Add project from disk.
 
-Abrí phpMyAdmin (http://localhost/phpmyadmin) o DBeaver y creá una nueva base de datos para el proyecto.
+Seleccioná la carpeta raíz Space-Invaders-2 recién clonada.
 
-Importá el archivo catalogo_db.sql ubicado en la raíz del repositorio para generar todas las tablas y relaciones.
+Unity Hub detectará automáticamente la versión del motor requerida; abrilo haciendo clic sobre el nombre del proyecto.
 
-Verificá las credenciales de conexión dentro de tu archivo de configuración de base de datos:
+Dentro del Unity Editor, dirigite a la carpeta Assets/Scenes/ y abrí la escena principal del juego.
 
-PHP
-$host = "localhost";
-$dbname = "catalogo_db";
-$username = "root";
-$password = "";
-Una vez importada la base de datos, abrí tu navegador y accedé a:
+Presioná el botón Play (▶) en la barra superior del editor para probar el juego en tiempo real, o dirigite a File > Build Settings para compilar un ejecutable independiente (.exe).
 
-Plaintext
-http://localhost/Gestor-Stock
 🧩 Flujo del sistema
 Fragmento de código
 flowchart LR
-    A[Cliente explora<br/>el catálogo] --> B[Arma carrito y<br/>confirma pedido]
-    B --> C{Administrador<br/>revisa orden}
-    C -->|Aprueba pedido| D[Aceptado<br/>Impacta en ventas y ganancias]
-    C -->|Cancela pedido| E[Rechazado]
-    D --> F[Cliente visualiza estado<br/>en Mis Pedidos]
+    A[Inicio de partida<br/>Carga de escena y oleada] --> B[Jugador mueve nave<br/>y dispara misiles]
+    B --> C{¿Colisión<br/>detectada?}
+    C -->|Misil impacta enemigo| D[Destruye enemigo<br/>y suma progreso]
+    C -->|Ataque impacta jugador| E[Resta vida<br/>al jugador]
+    D --> F{¿Quedan enemigos<br/>o vidas?}
     E --> F
+    F -->|Enemigos activos y Vidas > 0| B
+    F -->|Vidas = 0| G[Game Over]
+    F -->|Oleada despejada| H[Victoria / Siguiente oleada]
+
 ### 👤 Autor
 **Santiago Comes** 
 - 💻 GitHub: [Scomes02](https://github.com/Scomes02)
